@@ -33,7 +33,7 @@ jobs:
           emscripten/emsdk \
           emcc -lembind \
           -sEXIT_RUNTIME \
-          -sASYNCIFY \
+          -sASYNCIFY=1 \
           -sAUDIO_WORKLET \
           -sWASM_WORKERS \
           -o ${{ github.event.repository.name }}.js audioworklet_worker.c
