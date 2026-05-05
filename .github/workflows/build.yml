@@ -32,6 +32,8 @@ jobs:
           -u $(id -u):$(id -g) \
           emscripten/emsdk \
           emcc -lembind \
+          -sEXIT_RUNTIME \
+          -sASYNCIFY \
           -sAUDIO_WORKLET \
           -sWASM_WORKERS \
           -o ${{ github.event.repository.name }}.js audioworklet_worker.c
