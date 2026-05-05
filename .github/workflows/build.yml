@@ -31,7 +31,10 @@ jobs:
           -v $(pwd):/src \
           -u $(id -u):$(id -g) \
           emscripten/emsdk \
-          emcc -lembind -o ${{ github.event.repository.name }}.js audioworklet_worker.c
+          emcc -lembind \
+          -sAUDIO_WORKLET \
+          -sWASM_WORKERS \
+          -o ${{ github.event.repository.name }}.js audioworklet_worker.c
 
       - run: cp -f '${{ github.event.repository.name }}.js' 'committing'
           
