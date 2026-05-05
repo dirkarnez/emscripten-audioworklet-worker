@@ -1,5 +1,17 @@
 <!doctype html>
-<html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/z3-playground/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="./enable-threads.js"></script>
+  <title>emscripten-audioworklet-worker</title>
+</head>
+
+<body>
+  <a href="https://github.com/dirkarnez/emscripten-audioworklet-worker" target="_blank">dirkarnez/emscripten-audioworklet-worker</a><br>
+  <div id="app"></div>
   <script>
     var Module = {
       onRuntimeInitialized: function() {
@@ -63,4 +75,6 @@ downloadBlob(myBinaryBlob, 'some-file.bin', 'application/octet-stream');
     */
   </script>
   <script src="./emscripten-audioworklet-worker.js"></script>
+</body>
+
 </html>
