@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+  <script>
+    var Module = {
+      onRuntimeInitialized: function() {
+        /*
+        #include <stdio.h>
+        #include <fnmatch.h>
+        
+        int main()
+        {
+            char pattern[] = "*.c";
+            char string[] = "hello.c";
+            int r;
+        
+            r = fnmatch(pattern,string,0);
+            if( r==0 )
+                printf("'%s' matches '%s'\n",
+                        pattern,
+                        string
+                      );
+            else if( r==FNM_NOMATCH )
+                printf("'%s' does not match '%s'\n",
+                        pattern,
+                        string
+                      );
+            else
+                fprintf(stderr,"fnmatch() error\n");
+        
+            return(0);
+        }
+        */
+        const byteArray = Module.getBytes("abc");
+        console.log(byteArray);
+      }
+    };
+
+    /*
+var downloadBlob, downloadURL;
+
+downloadBlob = function(data, fileName, mimeType) {
+  var blob, url;
+  blob = new Blob([data], {
+    type: mimeType
+  });
+  url = window.URL.createObjectURL(blob);
+  downloadURL(url, fileName);
+  setTimeout(function() {
+    return window.URL.revokeObjectURL(url);
+  }, 1000);
+};
+
+downloadURL = function(data, fileName) {
+  var a;
+  a = document.createElement('a');
+  a.href = data;
+  a.download = fileName;
+  document.body.appendChild(a);
+  a.style = 'display: none';
+  a.click();
+  a.remove();
+};
+downloadBlob(myBinaryBlob, 'some-file.bin', 'application/octet-stream');
+    */
+  </script>
+  <script src="./binary-data-processing-emscripten.js"></script>
+</html>
